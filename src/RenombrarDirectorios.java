@@ -22,6 +22,11 @@ public class RenombrarDirectorios {
         for(File directorioArchivo : directoriosArchivosInternos){
             if(directorioArchivo.isDirectory()){ //si es carpeta cambio el nombre
                 String nombreOriginal = directorioArchivo.getName();
+                String nuevoNombre = "nuevo-" + nombreOriginal;
+                File nuevoDirectorio = new File(directorioArchivo.getParent(), nuevoNombre);
+                if(directorioArchivo.renameTo(nuevoDirectorio)){
+                    renombrarDirectoriosInternos(nuevoDirectorio);
+                }   
             } 
         }
     }
