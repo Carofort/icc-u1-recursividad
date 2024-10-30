@@ -49,14 +49,12 @@ public class Recursividad {
     // FIBONACCI
 
     public int fibonacci(int n){
-        if(n == 0){
-            return 0;
-        } else if (n == 1){
-            return 1;   
-        } 
-        
+        //Caso o casos base:
+        if (n == 0) return 0;
+        if (n == 1) return 1;   
+        //Clase recursiva
         return fibonacci(n - 1) + fibonacci(n - 2);
-
     }   
 
+    
 }
